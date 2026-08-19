@@ -1,4 +1,6 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import OurPhilosophy from "./components/OurPhilosophy/OurPhilosophy";
@@ -11,7 +13,9 @@ import Footer from "./components/Footer/Footer";
 import FAQ from "./components/FAQ/FAQ";
 import CAT from "./components/CAT/CAT";
 import Menu from "./components/Menu/Menu";
-function App() {
+import Login from "./components/Login/Login";
+
+function Home() {
   return (
     <div className="app">
       <Navbar />
@@ -30,6 +34,18 @@ function App() {
         <Footer />
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      {/* Main Website */}
+      <Route path="/" element={<Home />} />
+
+      {/* Login Page */}
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 }
 

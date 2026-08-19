@@ -1,0 +1,761 @@
+/* ==========================================================================
+   SHARE YOUR MATCHA MOMENT
+   ========================================================================== */
+
+.moments-section {
+  --moments-bg: #f3f0e7;
+  --moments-dark: #20241f;
+  --moments-green: #657448;
+  --moments-muted: #777b72;
+  --moments-line: rgba(35, 42, 34, 0.14);
+
+  width: calc(100% - 200px);
+  margin: 50px 100px 0;
+
+  background: var(--moments-bg);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   BOX SIZING
+   ========================================================================== */
+
+.moments-section *,
+.moments-section *::before,
+.moments-section *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+
+.moments-content {
+  width: 100%;
+
+  /*
+    Height increased
+  */
+  padding: 0px 35px 60px;
+}
+
+/* ==========================================================================
+   HEADING
+   ========================================================================== */
+
+.moments-heading {
+  margin: 0 0 38px;
+}
+
+.moments-heading h2 {
+  margin: 0;
+
+  color: var(--moments-dark);
+
+  /*
+    Same typography language as WHY section
+  */
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 5vw, 72px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -1.5px;
+}
+
+.moments-heading h2 span {
+  color: var(--moments-green);
+}
+
+/* ==========================================================================
+   PARAGRAPH
+   ========================================================================== */
+
+.moments-heading p {
+  max-width: 560px;
+
+  margin: 18px 0 0;
+
+  color: var(--moments-muted);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  letter-spacing: 0;
+}
+
+/* ==========================================================================
+   IMAGE VIEWPORT
+   ========================================================================== */
+
+.moments-viewport {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
+
+  cursor: grab;
+
+  overscroll-behavior-x: contain;
+
+  -webkit-overflow-scrolling: touch;
+
+  /*
+    Edge fade - subtle hint that more images continue
+    beyond the visible viewport
+  */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 28px,
+    black calc(100% - 28px),
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 28px,
+    black calc(100% - 28px),
+    transparent 100%
+  );
+}
+
+.moments-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.moments-viewport:active {
+  cursor: grabbing;
+}
+
+/* ==========================================================================
+   IMAGE TRACK
+   ========================================================================== */
+
+.moments-track {
+  display: flex;
+
+  align-items: stretch;
+
+  gap: 20px;
+
+  width: max-content;
+}
+
+/* ==========================================================================
+   IMAGE CARD
+   ========================================================================== */
+
+.moment-image {
+  /*
+    4 images visible at one time
+    Width calculated according to section
+  */
+
+  width: calc((100vw - 200px - 70px - 60px) / 4);
+
+  max-width: 350px;
+
+  aspect-ratio: 1 / 1;
+
+  flex: 0 0 auto;
+
+  overflow: hidden;
+
+  background: #e5e1d6;
+}
+
+/* ==========================================================================
+   IMAGE
+   ========================================================================== */
+
+.moment-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.moment-image:hover img {
+  transform: scale(1.035);
+}
+
+/* ==========================================================================
+   BOTTOM GREEN STRIP
+   ========================================================================== */
+
+.moments-footer {
+  width: 100%;
+
+  /*
+    Footer height increased
+  */
+  min-height: 58px;
+
+  padding: 0 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: var(--moments-green);
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+/* ==========================================================================
+   FOOTER TEXT
+   ========================================================================== */
+
+.moments-footer-text {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   FOOTER SCROLL NAVIGATION
+   ========================================================================== */
+
+.moments-footer-nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+/* ==========================================================================
+   OPTIONAL ICON BUTTON
+   ========================================================================== */
+
+.moments-icon-button {
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.moments-icon-button svg {
+  width: 18px;
+
+  height: 18px;
+}
+
+.moments-icon-button:hover {
+  background: #ffffff;
+
+  color: var(--moments-green);
+
+  transform: translateY(-2px);
+}
+
+.moments-icon-button:disabled {
+  opacity: 0.3;
+
+  cursor: not-allowed;
+}
+
+.moments-icon-button:disabled:hover {
+  background: transparent;
+
+  color: #ffffff;
+
+  transform: none;
+}
+
+/* ==========================================================================
+   LARGE DESKTOP
+   ========================================================================== */
+
+@media (min-width: 1400px) {
+  .moments-section {
+    width: calc(100% - 200px);
+
+    margin: 50px 100px 0;
+  }
+
+  .moments-content {
+    padding: 0px 40px 65px;
+  }
+
+  .moments-heading {
+    margin-bottom: 42px;
+  }
+
+  .moments-heading h2 {
+    font-size: 72px;
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+  }
+
+  .moments-heading p {
+    max-width: 600px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+  .moments-track {
+    gap: 22px;
+  }
+
+  .moment-image {
+    width: calc((100vw - 200px - 80px - 66px) / 4);
+
+    max-width: 360px;
+  }
+
+  .moments-footer {
+    min-height: 62px;
+
+    padding: 0 40px;
+
+    font-size: 10px;
+  }
+
+  .moments-footer-nav {
+    gap: 14px;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP
+   ========================================================================== */
+
+@media (max-width: 1399px) and (min-width: 1001px) {
+  .moment-image {
+    width: calc((100vw - 200px - 70px - 60px) / 4);
+  }
+}
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 1000px) {
+  .moments-section {
+    width: calc(100% - 100px);
+
+    margin: 45px 50px 0;
+  }
+
+  .moments-content {
+    padding: 0px 25px 50px;
+  }
+
+  .moments-heading {
+    margin-bottom: 34px;
+  }
+
+  .moments-heading h2 {
+    font-size: 50px;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.2px;
+  }
+
+  .moments-heading p {
+    max-width: 500px;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+  .moments-track {
+    gap: 16px;
+  }
+
+  .moment-image {
+    width: calc((100vw - 100px - 50px - 48px) / 4);
+
+    max-width: none;
+  }
+
+  .moments-footer {
+    min-height: 52px;
+
+    padding: 0 25px;
+  }
+
+  .moments-footer-nav {
+    gap: 10px;
+  }
+
+  .moments-icon-button {
+    width: 36px;
+
+    height: 36px;
+  }
+
+  .moments-icon-button svg {
+    width: 17px;
+
+    height: 17px;
+  }
+}
+
+/* ==========================================================================
+   SMALL TABLET
+   ========================================================================== */
+
+@media (max-width: 750px) {
+  .moments-section {
+    width: calc(100% - 60px);
+
+    margin: 40px 30px 0;
+  }
+
+  .moments-content {
+    padding: 0px 20px 42px;
+  }
+
+  .moments-heading {
+    margin-bottom: 30px;
+  }
+
+  .moments-heading h2 {
+    font-size: 42px;
+
+    line-height: 1.06;
+
+    letter-spacing: -1px;
+  }
+
+  .moments-heading p {
+    max-width: 100%;
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+  .moments-track {
+    gap: 13px;
+  }
+
+  .moment-image {
+    width: calc((100vw - 60px - 40px - 39px) / 4);
+  }
+
+  .moments-footer {
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    font-size: 8px;
+  }
+
+  .moments-footer-nav {
+    gap: 9px;
+  }
+
+  .moments-icon-button {
+    width: 32px;
+
+    height: 32px;
+  }
+
+  .moments-icon-button svg {
+    width: 15px;
+
+    height: 15px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .moments-section {
+    width: calc(100% - 30px);
+
+    margin: 30px 15px 0;
+  }
+
+  .moments-content {
+    padding: 0px 15px 35px;
+  }
+
+  .moments-heading {
+    margin-bottom: 26px;
+  }
+
+  .moments-heading h2 {
+    font-size: 36px;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.9px;
+  }
+
+  .moments-heading p {
+    margin-top: 14px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .moments-track {
+    gap: 12px;
+  }
+
+  /*
+    Mobile par 2 images visible
+  */
+
+  .moment-image {
+    width: calc((100vw - 30px - 30px - 12px) / 2);
+  }
+
+  .moments-footer {
+    min-height: 46px;
+
+    padding: 0 15px;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+  }
+
+  .moments-footer-nav {
+    gap: 8px;
+  }
+
+  .moments-icon-button {
+    width: 34px;
+
+    height: 34px;
+  }
+
+  .moments-icon-button svg {
+    width: 16px;
+
+    height: 16px;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 420px) {
+  .moments-section {
+    width: calc(100% - 24px);
+
+    margin: 25px 12px 0;
+  }
+
+  .moments-content {
+    padding: 0px 12px 30px;
+  }
+
+  .moments-heading {
+    margin-bottom: 23px;
+  }
+
+  .moments-heading h2 {
+    font-size: 32px;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.7px;
+  }
+
+  .moments-heading p {
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .moments-track {
+    gap: 10px;
+  }
+
+  .moment-image {
+    width: calc((100vw - 24px - 24px - 10px) / 2);
+  }
+
+  .moments-footer {
+    min-height: 44px;
+
+    padding: 0 12px;
+
+    font-size: 6px;
+  }
+
+  .moments-footer-nav {
+    gap: 7px;
+  }
+
+  .moments-icon-button {
+    width: 30px;
+
+    height: 30px;
+  }
+
+  .moments-icon-button svg {
+    width: 14px;
+
+    height: 14px;
+  }
+}
+
+/* ==========================================================================
+   VERY SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 360px) {
+  .moments-section {
+    width: calc(100% - 20px);
+
+    margin: 25px 10px 0;
+  }
+
+  .moments-content {
+    padding: 0px 10px 27px;
+  }
+
+  .moments-heading {
+    margin-bottom: 21px;
+  }
+
+  .moments-heading h2 {
+    font-size: 29px;
+  }
+
+  .moments-heading p {
+    font-size: 12px;
+
+    line-height: 1.65;
+  }
+
+  .moments-track {
+    gap: 8px;
+  }
+
+  .moment-image {
+    width: calc((100vw - 20px - 20px - 8px) / 2);
+  }
+
+  .moments-footer {
+    padding: 0 10px;
+
+    min-height: 42px;
+  }
+
+  .moments-footer-nav {
+    gap: 6px;
+  }
+
+  .moments-icon-button {
+    width: 28px;
+
+    height: 28px;
+  }
+
+  .moments-icon-button svg {
+    width: 13px;
+
+    height: 13px;
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .moments-viewport {
+    scroll-behavior: auto;
+  }
+
+  .moment-image img,
+  .moments-icon-button {
+    transition: none;
+  }
+}

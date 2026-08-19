@@ -1,0 +1,1726 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  color: #f4f2e9;
+
+  z-index: 1000;
+}
+
+/* =========================================================
+   NAVBAR INNER
+========================================================= */
+
+.navbar__inner {
+  position: relative;
+
+  width: 100%;
+  height: 86px;
+
+  padding: 0 5.5%;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 1002;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar__logo {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #f4f2e9;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: opacity 0.25s ease;
+}
+
+.navbar__logo:hover {
+  opacity: 0.85;
+}
+
+.navbar__logo-icon {
+  color: #a7b66c;
+
+  font-size: 22px;
+
+  line-height: 1;
+}
+
+.navbar__logo-text {
+  font-size: 20px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.09em;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.navbar__links {
+  display: flex;
+
+  align-items: center;
+
+  gap: clamp(25px, 2.8vw, 46px);
+
+  margin-left: auto;
+
+  margin-right: clamp(38px, 4vw, 68px);
+}
+
+.navbar__links a {
+  position: relative;
+
+  color: rgba(244, 242, 233, 0.88);
+
+  text-decoration: none;
+
+  font-size: clamp(14px, 1vw, 16px);
+
+  font-weight: 400;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.015em;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.navbar__links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -7px;
+
+  width: 0;
+
+  height: 1px;
+
+  background: #a7b66c;
+
+  transition: width 0.3s ease;
+}
+
+.navbar__links a:hover {
+  color: #ffffff;
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   RIGHT ACTIONS
+========================================================= */
+
+.navbar__actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   ICON BUTTON
+========================================================= */
+
+.navbar__icon-btn {
+  width: 32px;
+
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #f4f2e9;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navbar__icon-btn:hover {
+  color: #a7b66c;
+
+  transform: translateY(-1px);
+}
+
+.navbar__icon-btn svg {
+  display: block;
+}
+
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+.navbar__menu-btn {
+  display: none;
+
+  width: 36px;
+
+  height: 36px;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 50%;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  background: #f3f1e8;
+
+  color: #172019;
+
+  cursor: pointer;
+
+  position: relative;
+
+  z-index: 1005;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navbar__menu-btn:hover {
+  background: #a7b66c;
+
+  transform: scale(1.04);
+}
+
+.navbar__menu-btn span {
+  display: block;
+
+  width: 13px;
+
+  height: 1px;
+
+  background: currentColor;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s ease;
+}
+
+/* =========================================================
+   MENU BUTTON X
+========================================================= */
+
+.navbar--open .navbar__menu-btn span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.navbar--open .navbar__menu-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar--open .navbar__menu-btn span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.navbar__mobile-menu {
+  position: fixed;
+
+  top: 0;
+
+  right: 0;
+
+  width: min(430px, 88vw);
+
+  height: 100vh;
+
+  padding: 120px 42px 35px;
+
+  box-sizing: border-box;
+
+  background: linear-gradient(145deg, #1c291c 0%, #172218 55%, #111a12 100%);
+
+  border-left: 1px solid rgba(167, 182, 108, 0.2);
+
+  transform: translateX(105%);
+
+  visibility: hidden;
+
+  opacity: 0;
+
+  transition:
+    transform 0.45s cubic-bezier(0.77, 0, 0.175, 1),
+    opacity 0.35s ease,
+    visibility 0.45s;
+
+  z-index: 1001;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  box-shadow: -15px 0 50px rgba(0, 0, 0, 0.2);
+}
+
+.navbar__mobile-menu.is-open {
+  transform: translateX(0);
+
+  visibility: visible;
+
+  opacity: 1;
+}
+
+/* =========================================================
+   MOBILE LINKS
+========================================================= */
+
+.navbar__mobile-links {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.navbar__mobile-links a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid rgba(244, 242, 233, 0.12);
+
+  color: #f4f2e9;
+
+  text-decoration: none;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 30px;
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  transition:
+    color 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.navbar__mobile-links a span {
+  width: 25px;
+
+  color: #a7b66c;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+}
+
+.navbar__mobile-links a:hover {
+  color: #a7b66c;
+
+  padding-left: 8px;
+}
+
+/* =========================================================
+   MOBILE FOOTER
+========================================================= */
+
+.navbar__mobile-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: rgba(244, 242, 233, 0.55);
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.16em;
+}
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.navbar__overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(8, 14, 9, 0.45);
+
+  backdrop-filter: blur(3px);
+
+  -webkit-backdrop-filter: blur(3px);
+
+  z-index: 999;
+
+  animation: navbarOverlay 0.3s ease;
+}
+
+@keyframes navbarOverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   HELP SYSTEM
+========================================================= */
+
+.help-system {
+  position: fixed;
+
+  right: 30px;
+
+  bottom: 30px;
+
+  z-index: 1200;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   HELP PANEL
+========================================================= */
+
+.help-panel {
+  width: 360px;
+
+  margin-bottom: 14px;
+
+  padding: 25px;
+
+  border: 1px solid rgba(167, 182, 108, 0.25);
+
+  background: linear-gradient(145deg, #1d281f 0%, #162019 55%, #101712 100%);
+
+  color: #f4f2e9;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.32),
+    0 5px 25px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(20px) scale(0.96);
+
+  transform-origin: bottom right;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.help-system--open .help-panel {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0) scale(1);
+
+  pointer-events: auto;
+}
+
+/* =========================================================
+   HELP HEADER
+========================================================= */
+
+.help-panel__header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid rgba(244, 242, 233, 0.12);
+}
+
+.help-panel__eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #a7b66c;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.help-panel__header h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 27px;
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   HELP CLOSE
+========================================================= */
+
+.help-panel__close {
+  width: 32px;
+
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 1px solid rgba(244, 242, 233, 0.15);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #f4f2e9;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.help-panel__close:hover {
+  background: #a7b66c;
+
+  color: #172019;
+
+  transform: rotate(90deg);
+}
+
+.help-panel__close svg {
+  width: 14px;
+
+  height: 14px;
+}
+
+/* =========================================================
+   HELP INTRO
+========================================================= */
+
+.help-panel__intro {
+  margin: 17px 0 15px;
+
+  color: rgba(244, 242, 233, 0.55);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   HELP OPTIONS
+========================================================= */
+
+.help-options {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.help-options button {
+  width: 100%;
+
+  min-height: 59px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  border: 1px solid rgba(244, 242, 233, 0.09);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #f4f2e9;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.help-options button:hover {
+  background: rgba(167, 182, 108, 0.1);
+
+  border-color: rgba(167, 182, 108, 0.35);
+
+  transform: translateX(-3px);
+}
+
+/* =========================================================
+   OPTION ICON
+========================================================= */
+
+.help-option__icon {
+  width: 34px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(167, 182, 108, 0.1);
+
+  color: #a7b66c;
+}
+
+.help-option__icon svg {
+  width: 17px;
+
+  height: 17px;
+}
+
+/* =========================================================
+   OPTION CONTENT
+========================================================= */
+
+.help-option__content {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  flex: 1;
+}
+
+.help-option__content strong {
+  color: #f4f2e9;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.help-option__content small {
+  color: rgba(244, 242, 233, 0.42);
+
+  font-size: 9px;
+
+  line-height: 1.3;
+}
+
+/* =========================================================
+   OPTION ARROW
+========================================================= */
+
+.help-option__arrow {
+  color: #a7b66c;
+
+  font-size: 15px;
+
+  transition: transform 0.25s ease;
+}
+
+.help-options button:hover .help-option__arrow {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   EMAIL CTA
+========================================================= */
+
+.help-panel__email {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 15px;
+
+  padding: 14px 0 2px;
+
+  border: none;
+
+  border-top: 1px solid rgba(244, 242, 233, 0.1);
+
+  background: transparent;
+
+  color: rgba(244, 242, 233, 0.55);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-size: 9px;
+}
+
+.help-panel__email strong {
+  color: #a7b66c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   ANSWER VIEW
+========================================================= */
+
+.help-answer {
+  padding-top: 5px;
+}
+
+.help-answer__back {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #a7b66c;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.help-answer__back:hover {
+  opacity: 0.7;
+}
+
+.help-answer__icon {
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 22px;
+
+  border-radius: 50%;
+
+  background: rgba(167, 182, 108, 0.1);
+
+  color: #a7b66c;
+}
+
+.help-answer__icon svg {
+  width: 23px;
+
+  height: 23px;
+}
+
+.help-answer h4 {
+  margin: 17px 0 10px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 25px;
+
+  font-weight: 400;
+}
+
+.help-answer p {
+  margin: 0;
+
+  color: rgba(244, 242, 233, 0.58);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   ANSWER CONTACT
+========================================================= */
+
+.help-answer__contact {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 22px;
+
+  padding: 13px 15px;
+
+  border: 1px solid rgba(167, 182, 108, 0.35);
+
+  background: #a7b66c;
+
+  color: #172019;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.help-answer__contact:hover {
+  background: #c3ce8c;
+
+  transform: translateY(-2px);
+}
+
+.help-answer__contact span {
+  font-size: 15px;
+}
+
+/* =========================================================
+   HELP FOOTER
+========================================================= */
+
+.help-panel__footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 19px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(244, 242, 233, 0.08);
+
+  color: rgba(244, 242, 233, 0.32);
+
+  font-size: 8px;
+
+  letter-spacing: 0.3px;
+}
+
+.help-status {
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #a7b66c;
+
+  box-shadow: 0 0 0 4px rgba(167, 182, 108, 0.08);
+}
+
+/* =========================================================
+   FLOATING HELP BUTTON
+========================================================= */
+
+.navbar__help {
+  position: relative;
+
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(167, 182, 108, 0.45);
+
+  border-radius: 50%;
+
+  background: #a7b66c;
+
+  color: #172019;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  pointer-events: auto;
+
+  transition:
+    width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-radius 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   HELP ICON
+========================================================= */
+
+.navbar__help-icon {
+  width: 21px;
+
+  height: 21px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  transition: transform 0.35s ease;
+}
+
+.navbar__help-icon svg {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+}
+
+/* =========================================================
+   HELP TEXT
+========================================================= */
+
+.navbar__help-text {
+  max-width: 0;
+
+  margin-left: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  opacity: 0;
+
+  transition:
+    max-width 0.4s ease,
+    margin-left 0.4s ease,
+    opacity 0.3s ease;
+}
+
+/* =========================================================
+   HELP BUTTON HOVER
+========================================================= */
+
+.navbar__help:hover {
+  width: 115px;
+
+  border-radius: 32px;
+
+  background: #c3ce8c;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.22),
+    0 0 0 5px rgba(167, 182, 108, 0.08);
+}
+
+.navbar__help:hover .navbar__help-icon {
+  transform: rotate(-8deg);
+}
+
+.navbar__help:hover .navbar__help-text {
+  max-width: 55px;
+
+  margin-left: 9px;
+
+  opacity: 1;
+}
+
+/* =========================================================
+   OPEN STATE
+========================================================= */
+
+.help-system--open .navbar__help {
+  background: #f3f1e8;
+
+  color: #172019;
+}
+
+.help-system--open .navbar__help:hover {
+  background: #ffffff;
+}
+
+/* =========================================================
+   HELP PULSE
+========================================================= */
+
+.navbar__help::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -1px;
+
+  border: 1px solid rgba(167, 182, 108, 0.45);
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  animation: navbarHelpPulse 2.8s ease-out infinite;
+}
+
+@keyframes navbarHelpPulse {
+  0% {
+    transform: scale(1);
+
+    opacity: 0.7;
+  }
+
+  70% {
+    transform: scale(1.22);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.22);
+
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+  .navbar__inner {
+    height: 92px;
+
+    padding-left: 6%;
+
+    padding-right: 6%;
+  }
+
+  .navbar__logo-text {
+    font-size: 21px;
+  }
+
+  .navbar__logo-icon {
+    font-size: 23px;
+  }
+
+  .navbar__links {
+    gap: 38px;
+
+    margin-right: 65px;
+  }
+
+  .navbar__links a {
+    font-size: 16px;
+  }
+
+  .navbar__actions {
+    gap: 17px;
+  }
+
+  .navbar__menu-btn {
+    display: none;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1201px) and (max-width: 1399px) {
+  .navbar__inner {
+    height: 86px;
+
+    padding-left: 5.5%;
+
+    padding-right: 5.5%;
+  }
+
+  .navbar__links {
+    gap: 30px;
+
+    margin-right: 48px;
+  }
+
+  .navbar__links a {
+    font-size: 15px;
+  }
+
+  .navbar__menu-btn {
+    display: none;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (min-width: 1001px) and (max-width: 1200px) {
+  .navbar__inner {
+    height: 82px;
+
+    padding: 0 5%;
+  }
+
+  .navbar__links {
+    gap: 21px;
+
+    margin-right: 32px;
+  }
+
+  .navbar__links a {
+    font-size: 14px;
+  }
+
+  .navbar__actions {
+    gap: 11px;
+  }
+
+  .navbar__menu-btn {
+    display: none;
+  }
+
+  .navbar__logo-text {
+    font-size: 19px;
+  }
+
+  .navbar__logo-icon {
+    font-size: 21px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1000px) {
+  .navbar__inner {
+    height: 76px;
+
+    padding: 0 4%;
+  }
+
+  .navbar__links {
+    gap: 15px;
+
+    margin-right: 20px;
+  }
+
+  .navbar__links a {
+    font-size: 12px;
+  }
+
+  .navbar__actions {
+    gap: 7px;
+  }
+
+  .navbar__logo-text {
+    font-size: 18px;
+  }
+
+  .navbar__logo-icon {
+    font-size: 19px;
+  }
+
+  .navbar__menu-btn {
+    display: none;
+  }
+
+  .help-system {
+    right: 25px;
+
+    bottom: 25px;
+  }
+
+  .help-panel {
+    width: 350px;
+  }
+}
+
+/* =========================================================
+   MOBILE / SMALL TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+  .navbar__inner {
+    height: 72px;
+
+    padding: 0 22px;
+  }
+
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__actions {
+    gap: 8px;
+  }
+
+  .navbar__logo-text {
+    font-size: 17px;
+  }
+
+  .navbar__logo-icon {
+    font-size: 19px;
+  }
+
+  .navbar__icon-btn {
+    width: 32px;
+
+    height: 32px;
+  }
+
+  .navbar__menu-btn {
+    display: flex;
+
+    width: 36px;
+
+    height: 36px;
+  }
+
+  .navbar__mobile-menu {
+    width: min(420px, 90vw);
+
+    padding: 105px 32px 30px;
+  }
+
+  .navbar__mobile-links a {
+    font-size: 28px;
+
+    padding: 17px 0;
+  }
+
+  /* HELP */
+
+  .help-system {
+    right: 20px;
+
+    bottom: 20px;
+  }
+
+  .help-panel {
+    width: min(360px, calc(100vw - 40px));
+
+    padding: 22px;
+
+    margin-bottom: 12px;
+  }
+
+  .navbar__help {
+    width: 52px;
+
+    height: 52px;
+  }
+
+  .navbar__help-icon {
+    width: 19px;
+
+    height: 19px;
+  }
+
+  .navbar__help:hover {
+    width: 52px;
+
+    border-radius: 50%;
+
+    transform: translateY(-3px);
+  }
+
+  .navbar__help:hover .navbar__help-text {
+    max-width: 0;
+
+    margin-left: 0;
+
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .navbar__inner {
+    height: 70px;
+
+    padding: 0 20px;
+  }
+
+  .navbar__logo-text {
+    font-size: 16px;
+  }
+
+  .navbar__logo-icon {
+    font-size: 18px;
+  }
+
+  .navbar__actions {
+    gap: 6px;
+  }
+
+  .navbar__mobile-menu {
+    width: 88vw;
+
+    padding: 100px 28px 28px;
+  }
+
+  .navbar__mobile-links a {
+    font-size: 27px;
+
+    padding: 17px 0;
+  }
+
+  .help-system {
+    right: 18px;
+
+    bottom: 18px;
+  }
+
+  .help-panel {
+    width: calc(100vw - 36px);
+
+    padding: 20px;
+  }
+
+  .navbar__help {
+    width: 50px;
+
+    height: 50px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (min-width: 361px) and (max-width: 480px) {
+  .navbar__inner {
+    height: 68px;
+
+    padding: 0 18px;
+  }
+
+  .navbar__logo {
+    gap: 7px;
+  }
+
+  .navbar__logo-icon {
+    font-size: 17px;
+  }
+
+  .navbar__logo-text {
+    font-size: 15px;
+
+    letter-spacing: 0.08em;
+  }
+
+  .navbar__actions {
+    gap: 4px;
+  }
+
+  .navbar__icon-btn {
+    width: 31px;
+
+    height: 31px;
+  }
+
+  .navbar__icon-btn svg {
+    width: 17px;
+
+    height: 17px;
+  }
+
+  .navbar__menu-btn {
+    width: 34px;
+
+    height: 34px;
+  }
+
+  .navbar__mobile-menu {
+    width: 88vw;
+
+    padding: 100px 25px 25px;
+  }
+
+  .navbar__mobile-links a {
+    font-size: 25px;
+
+    padding: 16px 0;
+
+    gap: 14px;
+  }
+
+  .navbar__mobile-links a span {
+    font-size: 9px;
+  }
+
+  .navbar__mobile-footer {
+    font-size: 8px;
+
+    gap: 6px;
+  }
+
+  /* HELP */
+
+  .help-system {
+    right: 16px;
+
+    bottom: 16px;
+  }
+
+  .help-panel {
+    width: calc(100vw - 32px);
+
+    padding: 19px;
+  }
+
+  .help-panel__header h3 {
+    font-size: 24px;
+  }
+
+  .help-panel__intro {
+    font-size: 11px;
+  }
+
+  .navbar__help {
+    width: 49px;
+
+    height: 49px;
+  }
+
+  .navbar__help-icon {
+    width: 18px;
+
+    height: 18px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+  .navbar__inner {
+    height: 66px;
+
+    padding: 0 15px;
+  }
+
+  .navbar__logo {
+    gap: 6px;
+  }
+
+  .navbar__logo-icon {
+    font-size: 16px;
+  }
+
+  .navbar__logo-text {
+    font-size: 14px;
+
+    letter-spacing: 0.07em;
+  }
+
+  .navbar__actions {
+    gap: 3px;
+  }
+
+  .navbar__icon-btn {
+    width: 29px;
+
+    height: 29px;
+  }
+
+  .navbar__icon-btn svg {
+    width: 16px;
+
+    height: 16px;
+  }
+
+  .navbar__menu-btn {
+    width: 33px;
+
+    height: 33px;
+  }
+
+  .navbar__mobile-menu {
+    width: 92vw;
+
+    padding: 95px 22px 22px;
+  }
+
+  .navbar__mobile-links a {
+    font-size: 23px;
+
+    padding: 15px 0;
+
+    gap: 12px;
+  }
+
+  .navbar__mobile-links a span {
+    font-size: 8px;
+  }
+
+  .navbar__mobile-footer {
+    font-size: 7px;
+
+    gap: 5px;
+  }
+
+  /* HELP */
+
+  .help-system {
+    right: 14px;
+
+    bottom: 14px;
+  }
+
+  .help-panel {
+    width: calc(100vw - 28px);
+
+    padding: 17px;
+  }
+
+  .help-panel__header h3 {
+    font-size: 22px;
+  }
+
+  .help-panel__intro {
+    font-size: 10px;
+  }
+
+  .help-option__content strong {
+    font-size: 10px;
+  }
+
+  .help-option__content small {
+    font-size: 8px;
+  }
+
+  .navbar__help {
+    width: 46px;
+
+    height: 46px;
+  }
+
+  .navbar__help-icon {
+    width: 17px;
+
+    height: 17px;
+  }
+}
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .navbar__inner {
+    height: 62px;
+  }
+
+  .navbar__mobile-menu {
+    overflow-y: auto;
+
+    padding-top: 80px;
+  }
+
+  .navbar__mobile-links a {
+    padding: 10px 0;
+
+    font-size: 22px;
+  }
+
+  .help-system {
+    bottom: 12px;
+  }
+
+  .help-panel {
+    max-height: calc(100vh - 90px);
+
+    overflow-y: auto;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.navbar__help:focus-visible,
+.help-panel__close:focus-visible,
+.help-options button:focus-visible,
+.help-panel__email:focus-visible,
+.help-answer__back:focus-visible,
+.help-answer__contact:focus-visible {
+  outline: 2px solid #c3ce8c;
+
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar__mobile-menu,
+  .navbar__overlay,
+  .navbar__mobile-links a,
+  .navbar__menu-btn span,
+  .navbar__links a::after,
+  .navbar__help,
+  .navbar__help-icon,
+  .navbar__help-text,
+  .navbar__help::before,
+  .help-panel,
+  .help-options button,
+  .help-panel__close,
+  .help-answer__contact {
+    transition: none;
+
+    animation: none;
+  }
+}

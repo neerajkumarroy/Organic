@@ -1,0 +1,799 @@
+/* ==========================================================================
+   FARM TO CUP SECTION
+   ========================================================================== */
+
+.farm-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background: #f3f0e7;
+}
+
+/* ==========================================================================
+   MAIN GREEN CONTAINER
+   ========================================================================== */
+
+.farm-container {
+  width: 100%;
+  height: 560px;
+
+  margin: 0;
+  padding: 22px 0;
+
+  display: grid;
+  grid-template-columns: 42% 58%;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background: #657744;
+}
+
+/* ==========================================================================
+   LEFT CONTENT
+   ========================================================================== */
+
+.farm-content {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 45px 70px 45px 8vw;
+
+  box-sizing: border-box;
+
+  background: #657744;
+
+  color: #ffffff;
+
+  z-index: 2;
+}
+
+/* ==========================================================================
+   LABEL
+   ========================================================================== */
+
+.farm-label {
+  display: block;
+
+  margin: 0 0 14px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   HEADING
+   ========================================================================== */
+
+.farm-content h2 {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 4.2vw, 68px);
+
+  font-weight: 400;
+
+  line-height: 0.98;
+
+  letter-spacing: -2.5px;
+}
+
+/* ==========================================================================
+   HEADING HIGHLIGHT
+   ========================================================================== */
+
+.farm-content h2 span {
+  color: #e0e8c6;
+
+  font-style: italic;
+}
+
+/* ==========================================================================
+   DESCRIPTION
+   ========================================================================== */
+
+.farm-description {
+  width: 100%;
+  max-width: 370px;
+
+  margin: 0 0 28px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   BUTTON
+   ========================================================================== */
+
+.farm-button {
+  width: 175px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 9px 0 17px;
+
+  margin: 0;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  background: #ffffff;
+
+  color: #39452e;
+
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.farm-button:hover {
+  background: #f7f8f2;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(20, 30, 15, 0.18);
+}
+
+.farm-button:active {
+  transform: translateY(0);
+}
+
+.farm-button:focus-visible {
+  outline: 2px solid #dce6bd;
+
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   BUTTON ARROW
+   ========================================================================== */
+
+.farm-button-arrow {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #657744;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+.farm-button:hover .farm-button-arrow {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   RIGHT IMAGE WRAPPER
+   ========================================================================== */
+
+.farm-image-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  background: #536437;
+}
+
+/* ==========================================================================
+   IMAGE
+   ========================================================================== */
+
+.farm-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  margin: 0;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.farm-container:hover .farm-image {
+  transform: scale(1.025);
+}
+
+/* ==========================================================================
+   IMAGE OVERLAY
+   ========================================================================== */
+
+.farm-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  margin: 0;
+  padding: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(90deg, rgba(25, 37, 20, 0.08), transparent 35%);
+}
+
+/* ==========================================================================
+   IMAGE LABEL
+   ========================================================================== */
+
+.farm-image-label {
+  position: absolute;
+
+  right: 18px;
+  bottom: 18px;
+
+  margin: 0;
+
+  padding: 7px 10px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  background: rgba(30, 40, 25, 0.25);
+
+  backdrop-filter: blur(7px);
+
+  color: #ffffff;
+
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 1.4px;
+}
+
+/* ==========================================================================
+   LARGE DESKTOP
+   ========================================================================== */
+
+@media (min-width: 1400px) {
+  .farm-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .farm-container {
+    width: 100%;
+    height: 600px;
+
+    margin: 0;
+    padding: 25px 0;
+  }
+
+  .farm-content {
+    padding: 50px 80px 50px 8vw;
+  }
+
+  .farm-label {
+    font-size: 11px;
+
+    margin-bottom: 16px;
+  }
+
+  .farm-content h2 {
+    font-size: 72px;
+
+    line-height: 0.97;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 22px;
+  }
+
+  .farm-description {
+    max-width: 410px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+
+    margin-bottom: 30px;
+  }
+
+  .farm-button {
+    width: 185px;
+
+    height: 48px;
+  }
+
+  .farm-button-arrow {
+    width: 29px;
+    height: 29px;
+  }
+}
+
+/* ==========================================================================
+   LAPTOP
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .farm-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .farm-container {
+    width: 100%;
+    height: 520px;
+
+    margin: 0;
+
+    grid-template-columns: 43% 57%;
+
+    padding: 22px 0;
+  }
+
+  .farm-content {
+    padding: 40px 50px 40px 6vw;
+  }
+
+  .farm-label {
+    font-size: 9px;
+
+    margin-bottom: 12px;
+  }
+
+  .farm-content h2 {
+    font-size: 55px;
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 18px;
+  }
+
+  .farm-description {
+    max-width: 320px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    margin-bottom: 23px;
+  }
+
+  .farm-button {
+    width: 165px;
+
+    height: 43px;
+  }
+
+  .farm-button-arrow {
+    width: 26px;
+    height: 26px;
+
+    font-size: 12px;
+  }
+}
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .farm-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .farm-container {
+    width: 100%;
+    height: 460px;
+
+    margin: 0;
+
+    grid-template-columns: 44% 56%;
+
+    padding: 18px 0;
+  }
+
+  .farm-content {
+    padding: 35px 30px 35px 5vw;
+  }
+
+  .farm-label {
+    font-size: 8px;
+
+    margin-bottom: 11px;
+
+    letter-spacing: 1.7px;
+  }
+
+  .farm-content h2 {
+    font-size: 42px;
+
+    line-height: 1;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 15px;
+  }
+
+  .farm-description {
+    max-width: 260px;
+
+    font-size: 9px;
+
+    line-height: 1.55;
+
+    margin-bottom: 20px;
+  }
+
+  .farm-button {
+    width: 155px;
+
+    height: 40px;
+
+    padding-left: 14px;
+
+    font-size: 7px;
+  }
+
+  .farm-button-arrow {
+    width: 24px;
+    height: 24px;
+
+    font-size: 11px;
+  }
+
+  .farm-image-label {
+    right: 12px;
+
+    bottom: 12px;
+
+    padding: 6px 8px;
+
+    font-size: 6px;
+
+    letter-spacing: 1.2px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  .farm-section {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .farm-container {
+    width: 100%;
+
+    height: auto;
+
+    margin: 0;
+
+    padding: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #657744;
+  }
+
+  .farm-content {
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    padding: 55px 28px 48px;
+
+    box-sizing: border-box;
+  }
+
+  .farm-label {
+    font-size: 8px;
+
+    margin-bottom: 12px;
+
+    letter-spacing: 1.7px;
+  }
+
+  .farm-content h2 {
+    font-size: 42px;
+
+    line-height: 0.98;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 17px;
+  }
+
+  .farm-description {
+    width: 100%;
+
+    max-width: 100%;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    margin-bottom: 23px;
+  }
+
+  .farm-button {
+    width: 165px;
+
+    height: 42px;
+
+    padding-left: 14px;
+  }
+
+  .farm-button-arrow {
+    width: 25px;
+    height: 25px;
+  }
+
+  .farm-image-wrapper {
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    aspect-ratio: 1.4 / 1;
+
+    margin: 0;
+  }
+
+  .farm-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+  }
+
+  .farm-image-label {
+    right: 14px;
+
+    bottom: 14px;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 420px) {
+  .farm-section {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .farm-container {
+    width: 100%;
+
+    height: auto;
+
+    margin: 0;
+
+    padding: 0;
+  }
+
+  .farm-content {
+    width: 100%;
+
+    padding: 45px 22px 40px;
+  }
+
+  .farm-label {
+    font-size: 7px;
+
+    margin-bottom: 10px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .farm-content h2 {
+    font-size: 36px;
+
+    line-height: 0.99;
+
+    letter-spacing: -1.2px;
+
+    margin-bottom: 14px;
+  }
+
+  .farm-description {
+    font-size: 10px;
+
+    line-height: 1.55;
+
+    margin-bottom: 20px;
+  }
+
+  .farm-button {
+    width: 155px;
+
+    height: 40px;
+
+    font-size: 7px;
+  }
+
+  .farm-button-arrow {
+    width: 24px;
+    height: 24px;
+  }
+
+  .farm-image-wrapper {
+    width: 100%;
+
+    aspect-ratio: 1.25 / 1;
+  }
+
+  .farm-image-label {
+    right: 10px;
+
+    bottom: 10px;
+
+    padding: 6px 8px;
+
+    font-size: 6px;
+
+    letter-spacing: 1.1px;
+  }
+}
+
+/* ==========================================================================
+   VERY SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 360px) {
+  .farm-section {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .farm-container {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .farm-content {
+    padding: 40px 18px 35px;
+  }
+
+  .farm-content h2 {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+  }
+
+  .farm-description {
+    font-size: 9px;
+
+    line-height: 1.5;
+  }
+
+  .farm-button {
+    width: 145px;
+
+    height: 38px;
+  }
+
+  .farm-image-wrapper {
+    aspect-ratio: 1.2 / 1;
+  }
+}
+
+/* ==========================================================================
+   REMOVE DEFAULT ELEMENT SPACING
+   ========================================================================== */
+
+.farm-section *,
+.farm-container *,
+.farm-content *,
+.farm-image-wrapper * {
+  box-sizing: border-box;
+}
+
+.farm-section h1,
+.farm-section h2,
+.farm-section h3,
+.farm-section p {
+  margin-top: 0;
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .farm-image,
+  .farm-button,
+  .farm-button-arrow {
+    transition: none;
+  }
+}

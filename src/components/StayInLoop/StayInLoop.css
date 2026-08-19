@@ -1,0 +1,783 @@
+/* ==========================================================================
+   STAY IN THE LOOP
+   ========================================================================== */
+
+.stay-loop-section {
+  --loop-bg: #f3f0e7;
+  --loop-dark: #20241f;
+  --loop-muted: #777b72;
+  --loop-green: #657448;
+  --loop-green-dark: #56633d;
+  --loop-error: #b5503a;
+
+  width: calc(100% - 200px);
+  margin: 50px 100px 0;
+
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--loop-bg);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   BOX SIZING
+   ========================================================================== */
+
+.stay-loop-section *,
+.stay-loop-section *::before,
+.stay-loop-section *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   CONTENT
+   ========================================================================== */
+
+.stay-loop-content {
+  width: 100%;
+
+  max-width: 760px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 65px 30px;
+}
+
+/* ==========================================================================
+   EYEBROW
+   ========================================================================== */
+
+.stay-loop-eyebrow {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: var(--loop-green);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   HEADING
+   ========================================================================== */
+
+.stay-loop-content h2 {
+  margin: 0;
+
+  color: var(--loop-dark);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(42px, 4.5vw, 64px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -1.8px;
+}
+
+/* ==========================================================================
+   DESCRIPTION
+   ========================================================================== */
+
+.stay-loop-content p {
+  width: 100%;
+
+  max-width: 500px;
+
+  margin: 15px 0 28px;
+
+  color: var(--loop-muted);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   ACTIONS (FORM)
+   ========================================================================== */
+
+.stay-loop-actions {
+  display: flex;
+
+  align-items: stretch;
+
+  justify-content: center;
+
+  width: 100%;
+
+  max-width: 390px;
+
+  height: 46px;
+}
+
+/* ==========================================================================
+   EMAIL INPUT WRAPPER + ICON
+   ========================================================================== */
+
+.stay-loop-input-wrap {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.stay-loop-input-icon {
+  position: absolute;
+
+  left: 16px;
+
+  width: 15px;
+
+  height: 15px;
+
+  color: var(--loop-muted);
+
+  pointer-events: none;
+
+  transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   EMAIL INPUT
+   ========================================================================== */
+
+.stay-loop-input {
+  width: 100%;
+
+  height: 46px;
+
+  padding: 0 16px 0 42px;
+
+  border: 1px solid rgba(32, 36, 31, 0.12);
+
+  border-right: none;
+
+  border-radius: 0;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: var(--loop-dark);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  text-align: left;
+
+  appearance: none;
+
+  transition: border-color 0.3s ease;
+}
+
+.stay-loop-input::placeholder {
+  color: var(--loop-muted);
+}
+
+/* ==========================================================================
+   SUBSCRIBE BUTTON
+   ========================================================================== */
+
+.stay-loop-button {
+  width: 145px;
+
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 18px;
+
+  border: 1px solid var(--loop-green);
+
+  border-radius: 0;
+
+  background: var(--loop-green);
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.stay-loop-button-icon {
+  width: 14px;
+
+  height: 14px;
+
+  flex-shrink: 0;
+
+  transition: transform 0.3s ease;
+}
+
+.stay-loop-button:hover {
+  background: var(--loop-green-dark);
+
+  border-color: var(--loop-green-dark);
+
+  transform: translateY(-2px);
+}
+
+.stay-loop-button:hover .stay-loop-button-icon {
+  transform: translateX(3px);
+}
+
+.stay-loop-button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   FOCUS
+   ========================================================================== */
+
+.stay-loop-input:focus {
+  border-color: rgba(101, 116, 72, 0.45);
+}
+
+.stay-loop-input:focus ~ .stay-loop-input-icon,
+.stay-loop-input-wrap:focus-within .stay-loop-input-icon {
+  color: var(--loop-green);
+}
+
+.stay-loop-button:focus-visible {
+  outline: 2px solid var(--loop-green);
+
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   ERROR STATE
+   ========================================================================== */
+
+.stay-loop-actions.has-error .stay-loop-input {
+  border-color: var(--loop-error);
+}
+
+.stay-loop-actions.has-error .stay-loop-input-icon {
+  color: var(--loop-error);
+}
+
+/* ==========================================================================
+   STATUS MESSAGE
+   ========================================================================== */
+
+.stay-loop-status {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  min-height: 16px;
+
+  margin: 14px 0 0;
+
+  color: transparent;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  transition: color 0.3s ease;
+}
+
+.stay-loop-status--success {
+  color: var(--loop-green);
+}
+
+.stay-loop-status--error {
+  color: var(--loop-error);
+}
+
+.stay-loop-status-icon {
+  width: 14px;
+
+  height: 14px;
+
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   LARGE DESKTOP
+   ========================================================================== */
+
+@media (min-width: 1400px) {
+  .stay-loop-section {
+    width: calc(100% - 200px);
+
+    margin: 50px 100px 0;
+
+    min-height: 330px;
+  }
+
+  .stay-loop-content {
+    max-width: 800px;
+
+    padding: 75px 40px;
+  }
+
+  .stay-loop-eyebrow {
+    font-size: 10px;
+
+    margin-bottom: 16px;
+  }
+
+  .stay-loop-content h2 {
+    font-size: 64px;
+
+    letter-spacing: -2px;
+  }
+
+  .stay-loop-content p {
+    max-width: 540px;
+
+    font-size: 14px;
+
+    margin-top: 17px;
+
+    margin-bottom: 30px;
+  }
+
+  .stay-loop-actions {
+    max-width: 410px;
+
+    height: 48px;
+  }
+
+  .stay-loop-input,
+  .stay-loop-button {
+    height: 48px;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP
+   ========================================================================== */
+
+@media (max-width: 1399px) and (min-width: 1001px) {
+  .stay-loop-section {
+    min-height: 310px;
+  }
+
+  .stay-loop-content {
+    padding: 68px 30px;
+  }
+}
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 1000px) {
+  .stay-loop-section {
+    width: calc(100% - 100px);
+
+    margin: 45px 50px 0;
+
+    min-height: 290px;
+  }
+
+  .stay-loop-content {
+    padding: 60px 25px;
+  }
+
+  .stay-loop-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .stay-loop-content h2 {
+    font-size: 50px;
+
+    letter-spacing: -1.3px;
+  }
+
+  .stay-loop-content p {
+    max-width: 480px;
+
+    font-size: 13px;
+
+    margin-top: 14px;
+
+    margin-bottom: 26px;
+  }
+
+  .stay-loop-actions {
+    max-width: 380px;
+
+    height: 45px;
+  }
+
+  .stay-loop-input,
+  .stay-loop-button {
+    height: 45px;
+  }
+}
+
+/* ==========================================================================
+   SMALL TABLET
+   ========================================================================== */
+
+@media (max-width: 750px) {
+  .stay-loop-section {
+    width: calc(100% - 60px);
+
+    margin: 40px 30px 0;
+
+    min-height: 280px;
+  }
+
+  .stay-loop-content {
+    padding: 55px 20px;
+  }
+
+  .stay-loop-eyebrow {
+    font-size: 9px;
+
+    margin-bottom: 13px;
+  }
+
+  .stay-loop-content h2 {
+    font-size: 43px;
+
+    letter-spacing: -1px;
+  }
+
+  .stay-loop-content p {
+    max-width: 440px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+
+    margin-bottom: 25px;
+  }
+
+  .stay-loop-actions {
+    max-width: 360px;
+
+    height: 44px;
+  }
+
+  .stay-loop-input,
+  .stay-loop-button {
+    height: 44px;
+  }
+
+  .stay-loop-button {
+    width: 135px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .stay-loop-section {
+    width: calc(100% - 30px);
+
+    margin: 30px 15px 0;
+
+    min-height: 285px;
+  }
+
+  .stay-loop-content {
+    padding: 50px 15px;
+  }
+
+  .stay-loop-eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+  }
+
+  .stay-loop-content h2 {
+    font-size: 36px;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.8px;
+  }
+
+  .stay-loop-content p {
+    max-width: 340px;
+
+    margin: 14px 0 24px;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+  }
+
+  .stay-loop-actions {
+    max-width: 340px;
+
+    height: 43px;
+  }
+
+  .stay-loop-input {
+    height: 43px;
+
+    padding: 0 12px 0 38px;
+
+    font-size: 11px;
+  }
+
+  .stay-loop-input-icon {
+    left: 13px;
+
+    width: 14px;
+
+    height: 14px;
+  }
+
+  .stay-loop-button {
+    width: 125px;
+
+    height: 43px;
+
+    padding: 0 12px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.8px;
+  }
+
+  .stay-loop-button-icon {
+    width: 13px;
+
+    height: 13px;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 420px) {
+  .stay-loop-section {
+    width: calc(100% - 24px);
+
+    margin: 25px 12px 0;
+
+    min-height: 270px;
+  }
+
+  .stay-loop-content {
+    padding: 45px 12px;
+  }
+
+  .stay-loop-eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 11px;
+  }
+
+  .stay-loop-content h2 {
+    font-size: 32px;
+
+    letter-spacing: -0.7px;
+  }
+
+  .stay-loop-content p {
+    max-width: 310px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin: 13px 0 22px;
+  }
+
+  .stay-loop-actions {
+    max-width: 310px;
+
+    height: 41px;
+  }
+
+  .stay-loop-input {
+    height: 41px;
+
+    padding: 0 10px 0 34px;
+
+    font-size: 10px;
+  }
+
+  .stay-loop-input-icon {
+    left: 12px;
+
+    width: 13px;
+
+    height: 13px;
+  }
+
+  .stay-loop-button {
+    width: 112px;
+
+    height: 41px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.7px;
+  }
+
+  .stay-loop-button-icon {
+    width: 12px;
+
+    height: 12px;
+  }
+}
+
+/* ==========================================================================
+   VERY SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 360px) {
+  .stay-loop-section {
+    width: calc(100% - 20px);
+
+    margin: 25px 10px 0;
+
+    min-height: 255px;
+  }
+
+  .stay-loop-content {
+    padding: 40px 10px;
+  }
+
+  .stay-loop-content h2 {
+    font-size: 29px;
+  }
+
+  .stay-loop-content p {
+    max-width: 280px;
+
+    font-size: 11px;
+
+    margin-top: 12px;
+
+    margin-bottom: 20px;
+  }
+
+  .stay-loop-actions {
+    max-width: 280px;
+
+    height: 40px;
+  }
+
+  .stay-loop-input {
+    height: 40px;
+
+    padding: 0 8px 0 30px;
+
+    font-size: 9px;
+  }
+
+  .stay-loop-input-icon {
+    left: 10px;
+
+    width: 12px;
+
+    height: 12px;
+  }
+
+  .stay-loop-button {
+    width: 105px;
+
+    height: 40px;
+
+    padding: 0 8px;
+
+    font-size: 7px;
+  }
+
+  .stay-loop-button-icon {
+    width: 11px;
+
+    height: 11px;
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .stay-loop-button,
+  .stay-loop-button-icon,
+  .stay-loop-input,
+  .stay-loop-input-icon,
+  .stay-loop-status {
+    transition: none;
+  }
+}

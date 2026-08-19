@@ -3,7 +3,7 @@ import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import "./Menu.css";
 
 import matcha1 from "../../assets/glass.png";
-import matcha2 from "../../assets/drink2.png";
+import matcha2 from "../../assets/test3.png";
 import matcha3 from "../../assets/test1.png";
 import matcha4 from "../../assets/glass.png";
 import matcha5 from "../../assets/glass.png";
@@ -19,70 +19,70 @@ const menuItems = [
     category: "SIGNATURE",
     name: "Ceremonial Matcha",
     description: "Pure Japanese matcha with a soft, naturally sweet finish.",
-    price: "$18",
+    price: "₹1899",
   },
   {
     image: matcha2,
     category: "CLASSIC",
     name: "Matcha Latte",
     description: "Creamy oat milk blended with vibrant ceremonial matcha.",
-    price: "$14",
+    price: "₹1699",
   },
   {
     image: matcha3,
     category: "SEASONAL",
     name: "Yuzu Matcha",
     description: "Bright citrus notes meeting smooth stone-ground matcha.",
-    price: "$16",
+    price: "₹1999",
   },
   {
     image: matcha4,
     category: "SIGNATURE",
     name: "Matcha Cloud",
     description: "Silky matcha finished with a delicate layer of soft foam.",
-    price: "$15",
+    price: "₹1199",
   },
   {
     image: matcha5,
     category: "PREMIUM",
     name: "Uji Reserve",
     description: "Deep umami character from carefully selected Uji leaves.",
-    price: "$21",
+    price: "₹1120",
   },
   {
     image: matcha6,
     category: "HOUSE SPECIAL",
     name: "Vanilla Matcha",
     description: "Elegant vanilla balanced with earthy Japanese matcha.",
-    price: "$15",
+    price: "₹1815",
   },
   {
     image: matcha7,
     category: "SEASONAL",
     name: "Strawberry Matcha",
     description: "Fresh strawberry layered with creamy ceremonial matcha.",
-    price: "$17",
+    price: "₹1817",
   },
   {
     image: matcha8,
     category: "SIGNATURE",
     name: "Iced Matcha",
     description: "Bright, refreshing and perfectly balanced over ice.",
-    price: "$13",
+    price: "₹1813",
   },
   {
     image: matcha9,
     category: "HOUSE SPECIAL",
     name: "Coconut Matcha",
     description: "Creamy coconut milk paired with rich green tea notes.",
-    price: "$16",
+    price: "₹1896",
   },
   {
     image: matcha10,
     category: "PREMIUM",
     name: "Matcha Tonic",
     description: "Sparkling botanical freshness with vibrant matcha.",
-    price: "$15",
+    price: "₹1895",
   },
 ];
 

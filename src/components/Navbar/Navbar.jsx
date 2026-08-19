@@ -62,6 +62,7 @@ function Navbar() {
           <a href="#shop">Shop</a>
 
           <a href="#about">About Us</a>
+          <a href="/login">Login</a>
         </nav>
 
         {/* Right Actions */}
@@ -150,6 +151,10 @@ function Navbar() {
           <a href="#about" onClick={closeMenu}>
             <span>05</span>
             About Us
+          </a>
+          <a href="/login" onClick={closeMenu}>
+            <span>05</span>
+            Login
           </a>
         </div>
 

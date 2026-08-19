@@ -128,7 +128,7 @@
 
   color: var(--muted);
 
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
 }
 
@@ -495,7 +495,7 @@
 
   .matcha-menu__container {
     width: calc(100% - 180px);
-    max-width: 1500px;
+    max-width: 1600px;
   }
 
   .matcha-menu__header {
@@ -576,7 +576,7 @@
   }
 
   .matcha-menu__header-right p {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .matcha-menu__products {
@@ -658,7 +658,7 @@
 
     margin-bottom: 15px;
 
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 2px;
   }
 
@@ -693,7 +693,7 @@
 
     margin: 0 0 20px;
 
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.65;
   }
 
@@ -893,7 +893,7 @@
   .matcha-menu__eyebrow {
     margin-bottom: 13px;
 
-    font-size: 7px;
+    font-size: 10px;
     letter-spacing: 1.7px;
   }
 
@@ -908,7 +908,7 @@
   }
 
   .matcha-menu__header-right p {
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.65;
   }
 
@@ -995,7 +995,7 @@
   }
 
   .matcha-menu__header-right p {
-    font-size: 10.5px;
+    font-size: 12px;
   }
 
   .matcha-menu__products {
